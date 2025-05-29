@@ -128,16 +128,16 @@ const Footer = () => {
 
           {/* Column 4: Working Hours and About the Company (25%) */}
           <div className="flex flex-col items-center sm:items-start">
-            <h3 className="text-lg sm:text-xl font-semibold mb-3 md:text-justify ml-18">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 md:text-justify">
               Our Working Hours
             </h3>
-            <h5 className="text-base sm:text-lg font-medium mb-4 md:text-justify ml-18">
+            <h5 className="text-base sm:text-lg font-medium mb-4 md:text-justify">
               24 Hours Per Day
             </h5>
-            <h3 className="text-lg sm:text-xl font-semibold mb-3 md:text-justify ml-18">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 md:text-justify">
               About the Company
             </h3>
-            <p className="text-[14px] sm:text-[15px] text-center sm:text-left max-w-[90%] sm:max-w-xs md:text-justify ml-18">
+            <p className="text-[14px] sm:text-[15px] text-center sm:text-left max-w-[90%] sm:max-w-xs md:text-justify">
               We are a data-driven organization committed to helping
               governments, non-governmental organizations (NGOs), and businesses
               harness the power of data to make informed decisions. By

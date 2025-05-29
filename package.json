@@ -1,5 +1,6 @@
 {
   "name": "d4d",
+  "homepage": "",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,6 +18,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "framer-motion": "^12.15.0",
+    "gh-pages": "^6.3.0",
+    "github": "^14.0.0",
     "nodemailer": "^7.0.3",
     "react": "^19.1.0",
     "react-datepicker": "^8.4.0",

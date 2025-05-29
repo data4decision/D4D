@@ -42,6 +42,12 @@ const Navbar = () => {
               Services
             </Link>
             <Link
+              to="/team"
+              className="hover:text-[#F47B20] px-3 py-2 rounded-md text-sm font-bold"
+            >
+              Our Team
+            </Link>
+            <Link
               to="/contact"
               className="hover:text-[#F47B20] px-3 py-2 rounded-md text-sm font-bold"
             >
@@ -102,31 +108,38 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="flex justify-center md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-[#0b0b5c] w-full">
             <Link
               to="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-black"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"
               onClick={() => setIsOpen(false)} // Close menu on click
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-black"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"
               onClick={() => setIsOpen(false)} // Close menu on click
             >
               About
             </Link>
             <Link
               to="/service"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-black"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"
               onClick={() => setIsOpen(false)} // Close menu on click
             >
               Services
             </Link>
             <Link
+              to="/team"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"
+              onClick={() => setIsOpen(false)} // Close menu on click
+            >
+              Our Team
+            </Link>
+            <Link
               to="/contact"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-black"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"
               onClick={() => setIsOpen(false)} // Close menu on click
             >
               Contact
