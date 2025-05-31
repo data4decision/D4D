@@ -1,8 +1,7 @@
 {
-  "builds": [
-    { "src": "dist/**", "use": "@vercel/static" }
-  ],
-  "rewrites": [
-    { "source": "/D4D/(?!assets/.*)(.*)", "destination": "/D4D/index.html" }
+  "builds": [{ "src": "dist/**", "use": "@vercel/static" }],
+  "routes": [
+    { "src": "/D4D/assets/(.*)", "dest": "/D4D/assets/$1" },
+    { "src": "/D4D/(.*)", "dest": "/D4D/index.html" }
   ]
 }
