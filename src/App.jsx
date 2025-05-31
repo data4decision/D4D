@@ -9,7 +9,7 @@ import Contact from "./page/Contact.jsx";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/D4D">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
