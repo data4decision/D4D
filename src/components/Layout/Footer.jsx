@@ -41,7 +41,7 @@ const Footer = () => {
             </h3>
             <div className="flex items-center mb-3 ">
               <FaPhoneAlt className="mr-2" />
-              <p className="text-[14px] sm:text-[15px]">Phone: 09030031328</p>
+              <p className="text-[14px] sm:text-[15px]">Phone: 08069517707</p>
             </div>
             <div className="flex items-center">
               <FaEnvelope className="mr-2" />
@@ -108,7 +108,7 @@ const Footer = () => {
                 <FaFacebook size={24} />
               </a>
               <a
-                href="https://wa.me/2349030031328"
+                href="https://wa.me/8069517707"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#25D366] hover:text-[#F47B20]"

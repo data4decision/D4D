@@ -87,18 +87,18 @@ const ContactSection = () => {
           <p className="text-lg mb-4">
             Phone number:{" "}
             <a
-              href="https://wa.me/2349030031328"
+              href="https://wa.me/2348069517707"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-orange-500 transition"
             >
-              09030031328
+              08069517707
             </a>
           </p>
           <p className="text-lg">
             Email:{" "}
             <a
-              href="mailto:adegbesanoluwakayode52@gmail.com"
+              href="mailto:data4decision25@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-orange-500 transition"
