@@ -6,6 +6,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/D4D/",
+  build: {
+    chunkSizeWarningLimit: 600,
+  },
 });
 
 // import { defineConfig } from "vite";
@@ -13,6 +16,7 @@ export default defineConfig({
 // export default defineConfig({
 //   plugins: [tailwindcss()],
 //   base: "/D4D/",
+
 // });
 
 // export default {
