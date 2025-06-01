@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import AboutImage from "../assets/about.jpg"; // ✅ Make sure the path is correct
+import AboutImage from "../assets/about.jpg";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   const imageRef = useRef();
