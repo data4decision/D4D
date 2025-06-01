@@ -1,7 +1,8 @@
 {
   "builds": [{ "src": "dist/**", "use": "@vercel/static" }],
   "routes": [
-    { "src": "/D4D/assets/(.*)", "dest": "/D4D/assets/$1" },
-    { "src": "/D4D/(.*)", "dest": "/D4D/index.html" }
-  ]
+    { "src": "/D4D/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/D4D/(.*)", "dest": "/index.html" }
+  ],
+  "root": "dist"
 }
