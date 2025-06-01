@@ -53,9 +53,10 @@ const AboutSection = () => {
             ensuring data is accurate, accessible, and actionable for
             sustainable development and policy formulation.
           </p>
+
           <Link
             to="/about"
-            className="bg-[#F47B20] text-white text-[15px] font-semibold px-6 py-2 rounded hover:bg-[#0B0B5C] hover:text-white transition duration-300"
+            className="bg-[#F47B20] text-white text-[15px] font-semibold px-6 py-2 rounded hover:bg-white hover:text-[#0B0B5C] transition duration-300"
           >
             Read More
           </Link>
