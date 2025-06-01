@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import AboutImage from "../assets/about.jpg";
 import { Link } from "react-router-dom";
-
 const AboutSection = () => {
   const imageRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
@@ -54,7 +53,6 @@ const AboutSection = () => {
             ensuring data is accurate, accessible, and actionable for
             sustainable development and policy formulation.
           </p>
-
           <Link
             to="/about"
             className="bg-[#F47B20] text-white text-[15px] font-semibold px-6 py-2 rounded hover:bg-[#0B0B5C] hover:text-white transition duration-300"
