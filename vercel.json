@@ -3,6 +3,5 @@
   "routes": [
     { "src": "/D4D/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/D4D/(.*)", "dest": "/index.html" }
-  ],
-  "root": "dist"
+  ]
 }
