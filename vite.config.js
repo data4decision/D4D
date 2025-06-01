@@ -10,18 +10,3 @@ export default defineConfig({
     chunkSizeWarningLimit: 600,
   },
 });
-
-// import { defineConfig } from "vite";
-// import tailwindcss from "@tailwindcss/vite";
-// export default defineConfig({
-//   plugins: [tailwindcss()],
-//   base: "/D4D/",
-
-// });
-
-// export default {
-//   base: "/D4D/",
-//   build: {
-//     chunkSizeWarningLimit: 600,
-//   },
-// };
