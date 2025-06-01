@@ -67,10 +67,10 @@ const WhyChooseUs = () => {
   return (
     <>
       {/* First Section: Why Choose Us Header and Paragraph */}
-      <div className="bg-white py-10 mt-[150px] sm:py-12 lg:py-16">
+      <div className="bg-[#0B0B5C] py-10 mt-[150px] sm:py-12 lg:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 text-center">
           <motion.h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0B5C] mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fff] mb-4 sm:mb-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -79,7 +79,7 @@ const WhyChooseUs = () => {
             WHY CHOOSE US
           </motion.h1>
           <motion.p
-            className="text-base sm:text-lg lg:text-xl text-[#0B0B5C] max-w-5xl mx-auto"
+            className="text-base sm:text-lg lg:text-xl text-[#fff] max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -94,7 +94,7 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Second Section: Four Columns */}
-      <div className="bg-[#0B0B5C]/80 py-10 sm:py-12 lg:py-16">
+      <div className="bg-[#0B0B5C] py-10 sm:py-12 lg:py-16">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {columnsData.map((column, index) => (
