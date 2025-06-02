@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png"; // Adjusted path to src/components/
@@ -108,7 +107,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="flex justify-center md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-[#0b0b5c] w-full">
+          <div className="px-2 pt-2 pb-3 space-y-1 mt-9.5 bg-[#0b0b5c] w-full">
             <Link
               to="/"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"

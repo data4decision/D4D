@@ -87,7 +87,7 @@ const ContactSection = () => {
           <p className="text-lg mb-4">
             Phone number:{" "}
             <a
-              href="https://wa.me/2348069517707"
+              href="https://wa.me/+2348069517707"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-orange-500 transition"
@@ -109,7 +109,7 @@ const ContactSection = () => {
         </div>
 
         {/* Second Column: Contact Form */}
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {/* Name Field */}
             <div>
@@ -166,7 +166,7 @@ const ContactSection = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`bg-transparent border-2 border-[#0B0B5C] text-[#0B0B5C] px-6 py-2 rounded-md hover:bg-[#f47b20] hover:border-orange-500 transition self-start ${
+              className={`w-full bg-transparent border-2 border-[#0B0B5C] text-[#0B0B5C] px-6 py-2 rounded-md hover:bg-[#f47b20] hover:border-orange-500 transition self-start ${
                 isSubmitting ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >

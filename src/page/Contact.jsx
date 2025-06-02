@@ -90,16 +90,16 @@ const Contact = () => {
     <>
       {/* Section 1: Background Image with Text */}
       <section
-        className="h-[500px] bg-cover bg-center bg-no-repeat flex justify-center items-center text-center"
+        className="h-[300px] bg-cover bg-center bg-no-repeat flex justify-center items-center text-center sm:h-[600px]"
         style={{ backgroundImage: `url(${ContactBackground})` }} // Set the background image for the section
       >
         <div>
           {/* Heading: "CONTACT US" */}
-          <h1 className="text-[70px] sm:text-[70px] text-white mb-4 font-bold font-['Montserrat'] tracking-tight">
+          <h1 className="text-[40px] sm:text-[70px] text-[#0b0b5c] mb-4 font-bold font-['Montserrat'] tracking-tight">
             CONTACT US
           </h1>
           {/* Paragraph: "Let's have a chat." */}
-          <p className="text-[30px] sm:text-[40px] text-white font-light font-['Montserrat']">
+          <p className="text-[20px] sm:text-[40px] text-[#171744] font-bold font-['Montserrat']">
             Let's have a chat.
           </p>
         </div>
@@ -108,7 +108,7 @@ const Contact = () => {
       {/* Section 2: Contact Form */}
       <section className="bg-[#0B0B5C] py-16 flex justify-center items-center">
         {/* Form container: 50% width, centered with padding */}
-        <div className="w-full max-w-[50%] mx-auto px-4 sm:px-6 md:px-8">
+        <div className="w-full max-w-[80%] mx-auto px-4 sm:px-6 sm:w-full sm:max-w-[50%]   md:px-8">
           {/* Form element with onSubmit handler */}
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Field */}

@@ -182,7 +182,7 @@ const AppointmentSection = () => {
                 <div>
                   <button
                     onClick={toggleConsultationCalendar}
-                    className="block w-full bg-white text-[#0B0B5C] text-base sm:text-lg font-medium py-3 px-6 rounded-lg border border-[#0B0B5C] hover:bg-[#0B0B5C] hover:text-white transition duration-300 text-center"
+                    className="block w-full bg-white text-[#0B0B5C] text-base sm:text-lg font-medium py-3 px-6 rounded-lg border border-[#0B0B5C] hover:bg-[#f47b20] hover:text-white transition duration-300 text-center"
                   >
                     Consultation
                   </button>
@@ -210,7 +210,7 @@ const AppointmentSection = () => {
                   {showConsultationForm && (
                     <form
                       onSubmit={submitConsultation}
-                      className="mt-4 p-4 bg-gray-100 rounded-lg space-y-4"
+                      className="mt-4 p-4 bg-gray-100 text-[#0b0b5c] rounded-lg space-y-4"
                     >
                       <div>
                         <label className="block text-sm font-medium mb-1">
@@ -265,7 +265,7 @@ const AppointmentSection = () => {
                 <div>
                   <button
                     onClick={togglePhoneCallCalendar}
-                    className="block w-full bg-white text-[#0B0B5C] text-base sm:text-lg font-medium py-3 px-6 rounded-lg border border-[#0B0B5C] hover:bg-[#0B0B5C] hover:text-white transition duration-300 text-center"
+                    className="block w-full bg-white text-[#0B0B5C] text-base sm:text-lg font-medium py-3 px-6 rounded-lg border border-[#0B0B5C] hover:bg-[#f47b20] hover:text-white transition duration-300 text-center"
                   >
                     Phone Call
                   </button>
@@ -293,7 +293,7 @@ const AppointmentSection = () => {
                   {showPhoneCallForm && (
                     <form
                       onSubmit={submitPhoneCall}
-                      className="mt-4 p-4 bg-gray-100 rounded-lg space-y-4"
+                      className="mt-4 p-4 bg-gray-100 text-[#0b0b5c] rounded-lg space-y-4"
                     >
                       <div>
                         <label className="block text-sm font-medium mb-1">

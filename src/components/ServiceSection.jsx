@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 import Service1 from "../assets/Service1.png";
 import Service2 from "../assets/Service2.png";
 import Service3 from "../assets/Service3.png";
