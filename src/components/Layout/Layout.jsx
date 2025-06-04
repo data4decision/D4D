@@ -1,18 +1,19 @@
+// src/components/Layout/Layout.jsx
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../Layout/Navbar";
 import MapSection from "../Layout/map";
 import Footer from "../Layout/Footer";
 
-const Layout = () => {
+const Layout = ({ navbarRef }) => {
   return (
     <div>
-      <Navbar /> {/* Renders Navbar once */}
+      <Navbar navbarRef={navbarRef} /> {/* Pass navbarRef to Navbar */}
       <main>
         <Outlet />
       </main>
       <MapSection />
-      <Footer />
+      <Footer navbarRef={navbarRef} /> {/* Pass navbarRef to Footer */}
     </div>
   );
 };

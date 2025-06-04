@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -11,10 +11,25 @@ import {
 } from "react-icons/fa";
 import logo from "../../assets/logo.png"; // Adjusted path for src/components/
 
-const Footer = () => {
+const Footer = ({ navbarRef }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Function to handle navigation and scrolling
+  const handleLinkClick = (path) => {
+    // Navigate to the path
+    if (location.pathname !== path) {
+      navigate(path);
+    }
+    // Scroll to the navbar smoothly
+    if (navbarRef && navbarRef.current) {
+      navbarRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-[#0b0b5c] text-white min-h-[800px] sm:min-h-[600px] py-12">
-      <div className="max-w-8xl mx-auto px-6 sm:px-4 lg:px-4 ">
+      <div className="max-w-8xl mx-auto px-6 sm:px-4 lg:px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[30%_20%_15%_35%] gap-10 sm:gap-10 md:gap-8">
           {/* Column 1: Logo and Description (32%) */}
           <div className="flex flex-col items-center sm:items-start">
@@ -35,11 +50,11 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Contact Us (20%) */}
-          <div className="flex flex-col items-center sm:items-star pl-2.5 mt-10">
+          <div className="flex flex-col items-center sm:items-start pl-2.5 mt-10">
             <h3 className="text-lg sm:text-xl font-semibold mb-4">
               Contact Us
             </h3>
-            <div className="flex items-center mb-3 ">
+            <div className="flex items-center mb-3">
               <FaPhoneAlt className="mr-2" />
               <p className="text-[14px] sm:text-[15px]">Phone: 08069517707</p>
             </div>
@@ -56,38 +71,38 @@ const Footer = () => {
             <h3 className="text-lg sm:text-xl font-semibold mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-3 mb-6 ">
+            <ul className="space-y-3 mb-6">
               <li>
-                <Link
-                  to="/"
-                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer"
+                <button
+                  onClick={() => handleLinkClick("/")}
+                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer bg-transparent border-none p-0 text-left"
                 >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="/about"
-                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer"
+                <button
+                  onClick={() => handleLinkClick("/about")}
+                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer bg-transparent border-none p-0 text-left"
                 >
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="/service"
-                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer"
+                <button
+                  onClick={() => handleLinkClick("/service")}
+                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer bg-transparent border-none p-0 text-left"
                 >
                   Services
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer"
+                <button
+                  onClick={() => handleLinkClick("/contact")}
+                  className="text-[14px] sm:text-[15px] hover:text-[#F47B20] cursor-pointer bg-transparent border-none p-0 text-left"
                 >
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
             <div className="flex space-x-4">

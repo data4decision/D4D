@@ -1,12 +1,13 @@
+// src/components/Layout/Navbar.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png"; // Adjusted path to src/components/
 
-const Navbar = () => {
+const Navbar = ({ navbarRef }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#0B0B5C] text-white h-[150px]">
+    <nav ref={navbarRef} className="bg-[#0B0B5C] text-white h-[150px]">
       <div className="max-w-7xl mx-auto px-12 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -129,13 +130,13 @@ const Navbar = () => {
             >
               Services
             </Link>
-            <Link
+            {/* <Link
               to="/team"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"
               onClick={() => setIsOpen(false)} // Close menu on click
             >
               Our Team
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#f47b20]"

@@ -35,7 +35,7 @@ const AboutSection = () => {
         </div>
 
         {/* Right - Text Section */}
-        <div className="w-full md:w-1/2 ml-0 md:mr-[100px] text-center md:text-left">
+        <div className="w-full md:w-1/2 ml-0 md:mr-[0px] text-center md:text-left">
           {/* 👉 Margin-left on desktop, centered on mobile */}
           <h1 className="text-[36px] md:text-[50px] lg:text-[70px] font-bold mb-4">
             About us

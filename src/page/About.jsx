@@ -6,7 +6,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 const AboutUs = () => {
   // Animation variants for Mission (slide in from left)
   const missionVariants = {
-    hidden: { opacity: 0, x: -100 }, // Start off-screen to the left
+    hidden: { opacity: 0, x: -100 }, //Start off-screen to the left
     visible: {
       opacity: 1,
       x: 0,
@@ -84,7 +84,7 @@ const AboutUs = () => {
 
       {/* Mission and Vision Content */}
       <div className="  mt-20">
-        <div className="bg-[#0B0B5C] h-[500px] max-w-8xl mx-auto px-4 sm:px-6 lg:px-16 py-10 sm:py-12 lg:py-16">
+        <div className="bg-[#0B0B5C] h-[700px] max-w-8xl mx-auto px-4 md:h-[630px] sm:px-6 lg:px-16 py-10 sm:py-12 lg:py-16">
           <div className=" mt-15 flex flex-col lg:flex-row gap-8 lg:gap-12">
             {/* First Column: Mission */}
             <motion.div
