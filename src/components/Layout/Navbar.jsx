@@ -41,12 +41,12 @@ const Navbar = ({ navbarRef }) => {
             >
               Services
             </Link>
-            <Link
+            {/* <Link
               to="/team"
               className="hover:text-[#F47B20] px-3 py-2 rounded-md text-sm font-bold"
             >
               Our Team
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               className="hover:text-[#F47B20] px-3 py-2 rounded-md text-sm font-bold"
