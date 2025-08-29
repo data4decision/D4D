@@ -107,7 +107,7 @@ const Footer = ({ navbarRef }) => {
             </ul>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com/baba_jehjeh"
+                href="https://instagram.com/Data4Decision_Intl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#E1306C] hover:text-[#F47B20]"
@@ -115,7 +115,7 @@ const Footer = ({ navbarRef }) => {
                 <FaInstagram size={24} />
               </a>
               <a
-                href="https://facebook.com/OluwamayowaAkinkunmi"
+                href="https://facebook.com/SegunMandate"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#1877F2] hover:text-[#F47B20]"
@@ -131,7 +131,8 @@ const Footer = ({ navbarRef }) => {
                 <FaWhatsapp size={24} />
               </a>
               <a
-                href="https://twitter.com/MrKunmi0903003"
+                href="https://twitter.com/Data4Decision_Intl
+"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#1DA1F2] hover:text-[#F47B20]"

@@ -41,10 +41,10 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-30">
       {/* About Section */}
       <section className="mb-[50px] pt-[150px] pb-[150px] bg-white text-[#0B0B5C] px-4 md:px-[70px]">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-[100px]">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-[60px]">
           {/* Left - Image */}
           <div className="w-full md:w-1/2 flex justify-center">
             <img
