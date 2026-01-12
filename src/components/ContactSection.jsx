@@ -92,7 +92,7 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className="underline hover:text-orange-500 transition"
             >
-              08069517707
+              07040009930
             </a>
           </p>
           <p className="text-lg">
@@ -103,7 +103,7 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className="underline hover:text-orange-500 transition"
             >
-              data4decison25@gmail.com
+              info@data4decison.org
             </a>
           </p>
         </div>

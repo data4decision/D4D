@@ -166,10 +166,10 @@ const Navbar = ({ navbarRef }) => {
       <div className="max-w-7xl mx-auto px-12 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 ">
             <Link to="/">
               <img
-                className="h-20 w-auto mt-[60px]"
+                className="sm:h-15 sm:w-15 h-12 w-12 mt-[60px] bg-white rounded-full"
                 src={logo}
                 alt="Data Driven Data Logo"
               />
