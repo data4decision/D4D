@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row h-[100vh] md:h-[600px] w-full bg-white text-[#0B0B5C]">
+      <section className="flex flex-col md:flex-row h-[100vh] md:h-[500px] w-full bg-white text-[#0B0B5C]">
         <div className="w-full md:w-[60%] h-[50%] md:h-full flex flex-col justify-center p-6 md:p-20 mt-38">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-snug md:leading-tight">
             Empower Smarter Decisions Through Data Intelligence
@@ -37,7 +37,7 @@ const Home = () => {
           </p>
 
           <Link
-            to="/about" // Updated path to match the route in App.jsx
+            to="/about" 
             className="bg-[#F47B20] mb-10 text-white font-semibold px-5 py-2 md:px-6 md:py-3 rounded hover:bg-white hover:text-[#F47B20] transition duration-300 w-max"
           >
             Learn More
