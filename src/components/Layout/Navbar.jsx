@@ -315,7 +315,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="hidden md:flex items-center h-50 justify-between px-10 py-3 bg-[#0b0b5c] border-b border-[#f47b20]">
+      <div className="hidden md:flex items-center justify-between px-10 py-5 bg-[#0b0b5c] border-b border-[#f47b20]">
         <div className="flex items-center gap-2">
           <img src='/logo.png'  className='bg-white w-10 h-10 rounded-full'/>
           <h1 className='text-white text-[20px]'>Data4decision International</h1>
