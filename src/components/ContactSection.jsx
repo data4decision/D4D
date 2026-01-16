@@ -54,14 +54,14 @@ const ContactSection = () => {
     // Send the email using EmailJS
     try {
       await emailjs.send(
-        "service_grn79ir", // Service ID (same as in Contact.jsx)
-        "template_x93x25r", // Template ID (same as in Contact.jsx)
+        "service_123abc", // Service ID (same as in Contact.jsx)
+        "template_7eq51uh", // Template ID (same as in Contact.jsx)
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        "ZCDvTsahGB8YnPGIU" // Public Key (same as in Contact.jsx)
+        "YdXH7zCJtfM6CuSxE" // Public Key (same as in Contact.jsx)
       );
 
       setSubmitMessage("Message sent successfully!");
@@ -92,7 +92,7 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className="underline hover:text-orange-500 transition"
             >
-              07040009930
+              09168974621
             </a>
           </p>
           <p className="text-lg">

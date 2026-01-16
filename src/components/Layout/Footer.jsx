@@ -56,7 +56,7 @@ const Footer = ({ navbarRef }) => {
             </h3>
             <div className="flex items-center mb-3">
               <FaPhoneAlt className="mr-2" />
-              <p className="text-[14px] sm:text-[15px]">Phone: 07040009930</p>
+              <p className="text-[14px] sm:text-[15px]">Phone: 09168974621</p>
             </div>
             <div className="flex items-center">
               <FaEnvelope className="mr-2" />

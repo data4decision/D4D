@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row h-[100vh] md:h-[500px] w-full bg-white text-[#0B0B5C]">
+      <section className="flex flex-col md:flex-row h-[100vh] md:h-[400px] w-full bg-white text-[#0B0B5C]">
         <div className="w-full md:w-[60%] h-[50%] md:h-full flex flex-col justify-center p-6 md:p-20 mt-38">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-snug md:leading-tight">
             Empower Smarter Decisions Through Data Intelligence
@@ -43,7 +43,7 @@ const Home = () => {
             Learn More
           </Link>
         </div>
-        <div className="w-full md:w-[40%] h-[50%] md:h-full bg-[#FFF] relative overflow-hidden flex items-center justify-center p-4 mt-38">
+        <div className="w-full md:w-[40%] h-[50%] md:h-full bg-[#FFF] relative overflow-hidden flex items-center justify-center p-4 mt-30">
           {images.map((img, index) => (
             <img
               key={index}
