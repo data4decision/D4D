@@ -29,7 +29,7 @@ const AppointmentSection = () => {
 
   // Initialize EmailJS with your Public Key
   useEffect(() => {
-    emailjs.init("ZCDvTsahGB8YnPGIU"); // Replace with your EmailJS Public Key
+    emailjs.init("YdXH7zCJtfM6CuSxE"); // Replace with your EmailJS Public Key
   }, []); // Empty dependency array ensures this runs once on component mount
 
   // Handlers for calendar visibility
@@ -100,8 +100,8 @@ const AppointmentSection = () => {
 
     try {
       await emailjs.send(
-        "service_grn79ir",
-        "template_x93x25r",
+        "service_123abc",
+        "template_7eq51uh",
         appointmentDetails
       );
       alert("Appointment booked successfully! Details sent to admin.");
@@ -136,8 +136,8 @@ const AppointmentSection = () => {
 
     try {
       await emailjs.send(
-        "service_grn79ir",
-        "template_x93x25r",
+        "service_123abc",
+        "template_7eq51uh",
         appointmentDetails
       );
       alert("Appointment booked successfully! Details sent to admin.");
