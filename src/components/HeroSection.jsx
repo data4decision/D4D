@@ -90,7 +90,7 @@ const Hero = () => {
                 <FaGlobeAfrica className="text-[#f47b20] text-2xl" />
                 <div>
                   <div className="font-semibold text-[#0b0b5c]">Pan-African Reach</div>
-                  <div className="text-zinc-500 text-xs">12 countries • Growing</div>
+                  <div className="text-zinc-500 text-xs">5 countries • Growing</div>
                 </div>
               </div>
             </div>

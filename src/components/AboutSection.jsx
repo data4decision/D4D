@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaChartBar, FaGlobeAfrica } from "react-icons/fa";
+import { FaChartBar, FaGlobeAfrica, FaBrain } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const AboutSection = () => {
@@ -115,7 +115,7 @@ const AboutSection = () => {
             <div className="grid md:grid-cols-3 gap-6 pt-6">
               {[
                 { icon: <FaChartBar/>, title: "Evidence-Based Decision Making", desc: "Turning raw data into actionable intelligence for better policies." },
-                { icon: "🧠", title: "Capacity Building & Research", desc: "Empowering institutions with knowledge and technical expertise." },
+                { icon: <FaBrain/>, title: "Capacity Building & Research", desc: "Empowering institutions with knowledge and technical expertise." },
                 { icon: <FaGlobeAfrica/>, title: "Sustainable Development Solutions", desc: "Designing scalable programs that deliver long-term community impact." }
               ].map((card, idx) => (
                 <div 
@@ -155,7 +155,7 @@ const AboutSection = () => {
               <div className="text-[#0b0b5c]/70 uppercase tracking-widest text-sm">Partner Organizations</div>
             </div>
             <div>
-              <div className="text-6xl font-bold mb-2">2+</div>
+              <div className="text-6xl font-bold mb-2">5+</div>
               <div className="text-[#0b0b5c]/70 uppercase tracking-widest text-sm">Countries Reached</div>
             </div>
             <div>
