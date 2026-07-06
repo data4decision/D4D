@@ -7,7 +7,10 @@ import ServiceSection from "../components/ServiceSection.jsx";
 import OurApproach from "../components/ourApproach.jsx"; // Fixed case (was ourApproach)
 import AppointmentSection from "../components/AppointmentSection.jsx";
 import ContactSection from "../components/ContactSection.jsx";
+<<<<<<< HEAD
 import HeroSection from "../components/HeroSection.jsx";
+=======
+>>>>>>> 52e79d7ac623781fd5c4ba702b227a2f498a84a0
 // import OurTeam from "../components/OurTeam.jsx";
 
 const images = [Hero1, Hero2];
@@ -25,7 +28,11 @@ const Home = () => {
 
   return (
     <>
+<<<<<<< HEAD
       {/* <section className="flex flex-col md:flex-row h-[100vh] md:h-[400px] w-full bg-white text-[#0B0B5C]">
+=======
+      <section className="flex flex-col md:flex-row h-[100vh] md:h-[400px] w-full bg-white text-[#0B0B5C]">
+>>>>>>> 52e79d7ac623781fd5c4ba702b227a2f498a84a0
         <div className="w-full md:w-[60%] h-[50%] md:h-full flex flex-col justify-center p-6 md:p-20 mt-38">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-snug md:leading-tight">
             Empower Smarter Decisions Through Data Intelligence
@@ -59,8 +66,12 @@ const Home = () => {
             />
           ))}
         </div>
+<<<<<<< HEAD
       </section> */}
       <HeroSection/>
+=======
+      </section>
+>>>>>>> 52e79d7ac623781fd5c4ba702b227a2f498a84a0
       <AboutSection className="mb-[150px]" />
       <ServiceSection />
       <OurApproach />
