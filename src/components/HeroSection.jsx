@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';     // ← Import this
-import { FaArrowRight, FaChartBar, FaGlobeAfrica } from 'react-icons/fa';
+import { FaArrowRight, FaChartBar, FaChartLine, FaGlobeAfrica } from 'react-icons/fa';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,7 +12,7 @@ const Hero = () => {
     { image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80", alt: "Field Data Collection" },
     { image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80", alt: "Strategic Meeting" },
     { image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80", alt: "GIS & Data Visualization" },
-    { image: "https://images.unsplash.com/photo-1625246458763-9d4b9b2c2f8e?w=800&q=80", alt: "Agricultural Data" },
+    { image: "/agricSurvey.jpg", alt: "Agricultural Data" },
   ];
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20">
             <div className="w-2 h-2 bg-[#f47b20] rounded-full animate-pulse" />
-            <span className="text-white text-sm font-medium tracking-widest">DATA FOR IMPACT</span>
+            <span className="text-white text-sm font-medium tracking-widest">DATA FOR DECISION</span>
           </div>
 
           <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tighter">
@@ -113,17 +113,17 @@ const Hero = () => {
           </div>
 
           {/* Decorative Floating Icons */}
-          <div className="absolute -top-6 -right-6 text-5xl opacity-20 animate-float-slow">📊</div>
-          <div className="absolute -bottom-8 left-12 text-5xl opacity-20 animate-float">📈</div>
-          <div className="absolute top-1/3 -left-8 text-4xl opacity-20 animate-float-delay">🌍</div>
+          <div className="absolute -top-6 -right-6 text-5xl opacity-20 animate-float-slow"><FaChartBar className='text-[#ffffff]'/></div>
+          <div className="absolute -bottom-8 left-12 text-5xl opacity-20 animate-float"><FaChartLine className='text-[#ffffff]'/></div>
+          <div className="absolute top-1/3 -left-8 text-4xl opacity-20 animate-float-delay"><FaGlobeAfrica className='text-[#ffffff]'/></div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/60 text-xs tracking-widest">
+      {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/60 text-xs tracking-widest">
         SCROLL TO EXPLORE
         <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/40 to-transparent mt-3" />
-      </div>
+      </div> */}
     </section>
   );
 };
