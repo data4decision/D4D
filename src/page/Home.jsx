@@ -9,6 +9,7 @@ import AppointmentSection from "../components/AppointmentSection.jsx";
 import ContactSection from "../components/ContactSection.jsx";
 
 import HeroSection from "../components/HeroSection.jsx";
+import WhyChooseUs from "../components/WhyChooseUs.jsx";
 
 // import OurTeam from "../components/OurTeam.jsx";
 
@@ -69,8 +70,9 @@ const Home = () => {
       </section> */}
       <HeroSection/>
 
-      <AboutSection className="mb-[150px]" />
+      <AboutSection  />
       <ServiceSection />
+      <WhyChooseUs/>
       <OurApproach />
       <AppointmentSection />
 

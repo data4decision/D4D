@@ -162,7 +162,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden bg-white border-t shadow-2xl">
           <div className="px-6 py-10 flex flex-col gap-6 text-[17px] font-medium">
-            <a href="/home" className="py-3 text-[#0b0b5c]" onClick={() => setIsOpen(false)}>Home</a>
+            <a href="/" className="py-3 text-[#0b0b5c]" onClick={() => setIsOpen(false)}>Home</a>
             <a href="/about" className="py-3 text-[#0b0b5c]" onClick={() => setIsOpen(false)}>About Us</a>
             
             {/* Mobile Services */}

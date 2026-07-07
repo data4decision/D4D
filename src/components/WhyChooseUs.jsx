@@ -1,129 +1,119 @@
-import React from "react";
-import { motion } from "framer-motion";
-import choose1 from "../assets/choose1.png";
-import choose2 from "../assets/choose2.png";
-import choose3 from "../assets/choose3.png";
-import choose4 from "../assets/choose4.png";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  FaBrain, 
+  FaUsers, 
+  FaChartLine, 
+  FaLightbulb, 
+  FaGlobeAfrica, 
+  FaShieldAlt 
+} from 'react-icons/fa';
+
+const features = [
+  {
+    icon: <FaBrain />,
+    title: "Evidence-Based Decision Making",
+    desc: "We transform complex data into clear, actionable insights that drive smarter policies and strategies."
+  },
+  {
+    icon: <FaUsers />,
+    title: "Expert Multidisciplinary Team",
+    desc: "Seasoned experts across research, data science, technology, agriculture, health, and development."
+  },
+  {
+    icon: <FaChartLine />,
+    title: "Data Analytics & Research Excellence",
+    desc: "High-quality research, advanced analytics, monitoring, and evaluation with proven methodologies."
+  },
+  {
+    icon: <FaLightbulb />,
+    title: "Innovation & Digital Solutions",
+    desc: "Cutting-edge digital platforms, information systems, and technology-driven solutions."
+  },
+  {
+    icon: <FaGlobeAfrica />,
+    title: "Sustainable Development Focus",
+    desc: "Solutions designed for long-term impact, institutional strengthening, and community empowerment."
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Integrity & Professionalism",
+    desc: "Uncompromising standards of ethics, transparency, and accountability in all our work."
+  },
+];
 
 const WhyChooseUs = () => {
-  // Animation variants for the header (slide in from left)
-  const headerVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
-  // Animation variants for the paragraph (slide in from right)
-  const paragraphVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut", delay: 0.2 },
-    },
-  };
-
-  // Animation variants for the columns (slide in from bottom)
-  const columnVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: i * 0.2, // Staggered animation for each column
-      },
-    }),
-  };
-
-  // Data for the four columns
-  const columnsData = [
-    {
-      image: choose1,
-      title: "Strengthening Information Systems",
-      text: "we design adaptive and resilient information systems tailored to real-world challenges. Our integrated solutions help organizations collect, manage, and analyze data effectively—enabling strategic decisions that produce sustainable, measurable results.",
-    },
-    {
-      image: choose2,
-      title: "Promoting Ethical Data Governance",
-      text: "We champion ethical data use by embedding transparency, privacy, and responsibility into every solution. Our governance frameworks ensure that data protects communities’ rights and contributes to development goals without compromising trust or ethical standards. ",
-    },
-    {
-      image: choose3,
-      title: "Building Sustainable Local Capacity",
-      text: "We foster lasting impact by empowering local institutions through inclusive training and mentorship. Our goal is sustainable independence—equipping stakeholders with the skills and confidence to manage and maintain data systems long after implementation.",
-    },
-    {
-      image: choose4,
-      title: "Providing Tailored Technical Support & Reliable Tools",
-      text: "D4D International offers expert technical support and digital tools customized for unique environments. Whether for governments, NGOs, or businesses, our solutions simplify complexity, enabling impactful decisions through collaborative innovation and reliable technology.",
-    },
-  ];
-
   return (
-    <>
-      {/* First Section: Why Choose Us Header and Paragraph */}
-      <div className="bg-[#0B0B5C] py-10 mt-[150px] sm:py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 text-center">
-          <motion.h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fff] mb-4 sm:mb-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={headerVariants}
+    <section className="py-24 bg-[#0b0b5c] text-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-6"
           >
-            WHY CHOOSE US
-          </motion.h1>
-          <motion.p
-            className="text-base sm:text-lg lg:text-xl text-[#fff] max-w-5xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={paragraphVariants}
-          >
-            We empower governments, institutions, and organizations through
-            expert training, ethical data governance, and tailored solutions
-            that enhance data-driven decision-making for sustainable development
-            and long-term impact.
-          </motion.p>
-        </div>
-      </div>
+            <span className="text-[#f47b20]">★</span>
+            <span className="uppercase tracking-widest text-sm font-medium">Why Choose Us</span>
+          </motion.div>
 
-      {/* Second Section: Four Columns */}
-      <div className="bg-[#0B0B5C] py-10 sm:py-12 lg:py-16">
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {columnsData.map((column, index) => (
-              <motion.div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={columnVariants}
-                custom={index} // Pass index for staggered animation
-              >
-                <img
-                  src={column.image}
-                  alt={column.title}
-                  className="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-4"
-                />
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0B0B5C] mb-3">
-                  {column.title}
-                </h3>
-                <p className="text-sm sm:text-base lg:text-lg text-[#0B0B5C]">
-                  {column.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+            Why Organizations Trust <span className="text-[#f47b20]">D4D</span>
+          </h2>
+          <p className="mt-6 text-xl text-white/70 max-w-2xl mx-auto">
+            We deliver more than data - we deliver clarity, confidence, and lasting impact.
+          </p>
         </div>
+
+        {/* Features Grid - New Layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
+              whileHover={{ y: -12 }}
+              className="group bg-white/5 backdrop-blur-lg border border-white/10 hover:border-[#f47b20] rounded-3xl p-10 transition-all duration-500 hover:bg-white/10"
+            >
+              <div className="w-16 h-16 flex items-center justify-center bg-[#f47b20]/10 rounded-2xl text-[#f47b20] text-4xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+
+              <h3 className="text-2xl font-semibold mb-4 text-white group-hover:text-[#f47b20] transition-colors">
+                {feature.title}
+              </h3>
+
+              <p className="text-white/70 leading-relaxed text-[15.5px]">
+                {feature.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom CTA Bar */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mt-20 bg-white text-[#0b0b5c] rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div>
+            <h3 className="text-3xl font-bold">Ready to Work with the Best?</h3>
+            <p className="text-lg text-[#f47b20] mt-2">Let's create meaningful impact together.</p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="px-10 py-4 bg-[#f47b20] text-white font-semibold rounded-2xl hover:bg-orange-600 transition-all hover:scale-105">
+              Partner With Us
+            </button>
+            <button className="px-10 py-4 border-2 border-[#0b0b5c] font-semibold rounded-2xl hover:bg-[#0b0b5c] hover:text-white transition-all">
+              Learn More
+            </button>
+          </div>
+        </motion.div>
       </div>
-    </>
+    </section>
   );
 };
 

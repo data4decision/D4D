@@ -1,95 +1,160 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Service1 from "../assets/Service1.png";
-import Service2 from "../assets/Service2.png";
-import Service3 from "../assets/Service3.png";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaChartBar, FaSearch, FaDatabase, FaHandsHelping, FaLaptopCode, FaLeaf, FaRegChartBar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const ServiceSection = () => {
+const services = [
+  {
+    title: "Monitoring, Evaluation, Accountability and Learning (MEAL)",
+    desc: "Comprehensive MEAL systems to track progress, ensure accountability, and facilitate continuous learning for impactful programs.",
+    icon: <FaChartBar className="text-5xl" />,
+    link: "/services/meal",
+    bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+  },
+  {
+    title: "Research and Evidence Generation",
+    desc: "Rigorous research, impact evaluations, and evidence synthesis to inform policy and development interventions.",
+    icon: <FaSearch className="text-5xl" />,
+    link: "/services/research",
+    bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
+  },
+  {
+    title: "Data Collection and Management",
+    desc: "Efficient, reliable, and technology-enabled data collection systems with robust data management solutions.",
+    icon: <FaDatabase className="text-5xl" />,
+    link: "/services/data-collection",
+    bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+  },
+  {
+    title: "Capacity Building and Technical Assistance",
+    desc: "Tailored training programs and technical support to strengthen institutions and local expertise.",
+    icon: <FaHandsHelping className="text-5xl" />,
+    link: "/services/capacity-building",
+    bgImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+  },
+  {
+  title: "Digital Transformation Solutions",
+  desc: "End-to-end digital solutions including system development, automation, cloud services, and technology integration to modernize operations.",
+  icon: <FaLaptopCode className="text-5xl" />,
+  link: "/services/digital-transformation",
+  bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+},
+
+{
+  title: "Agriculture and Rural Development Solutions",
+  desc: "Specialized data-driven solutions for agricultural value chains, farmer profiling, climate-smart agriculture, and rural development initiatives.",
+  icon: <FaLeaf className="text-5xl" />,
+  link: "/services/agriculture-rural-development",
+  bgImage: "/Agriculture.jpg"
+},
+
+{
+  title: "Data Analytics and Business Intelligence",
+  desc: "Advanced analytics, interactive dashboards, predictive modeling, and business intelligence tools to support informed decision-making.",
+  icon: <FaRegChartBar className="text-5xl" />,
+  link: "/services/data-analytics",
+  bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+}
+];
+
+const Services = () => {
   return (
-    <section className="bg-[#fff] py-20 px-6 md:px-16 mt-[100px]">
-      <h1 className="text-[70px] text-[#0B0B5C] text-center font-bold mb-6">
-        Our Services
-      </h1>
-      <p className="text-[#0B0B5C] text-center max-w-5xl mx-auto mb-12 text-base">
-        At Data4Decision, we provide full-cycle data management and analytics,
-        from collection to insight, empowering governments, NGOs, and businesses
-        to make impactful, data-driven decisions. We decode complex data to
-        drive transformational change for people, products, and organizations
-        through tailored strategies, smart reporting, and actionable
-        intelligence that fuel growth, innovation, and success.
-      </p>
+    <section id="services" className="py-24 relative bg-[#0b0b5c]">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 bg-[url('/ourservices.jpg')] bg-cover bg-center opacity-40" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="inline-block bg-[#f47b20] text-white px-6 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            What We Do
+          </motion.div>
 
-      <div className="flex flex-col lg:flex-row justify-center items-stretch gap-8">
-        {/* Left Column */}
-        <div className="bg-[#0B0B5C] p-5 text-center text-white rounded-[10px] max-w-sm w-full mx-auto lg:ml-[100px] lg:mr-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] animate-slide-up">
-          <img
-            src={Service1}
-            alt="Real-time Learning"
-            className="mx-auto mb-4 h-40"
-          />
-          <h3 className="text-[20px] font-semibold mb-2">
-            Real-time Learning and Adaptation
-          </h3>
-          <p className="text-[15px]">
-            We implement real-time learning and adaptation to ensure our systems
-            continuously evolve. By instantly learning from new data, we stay
-            agile, improving accuracy, anticipating user needs, and responding
-            swiftly to market shifts.
+          <h2 className="md:text-5xl text-4xl font-bold text-[#ffffff] tracking-tighter mb-6">
+            Our Professional Services
+          </h2>
+
+          <p className="md:text-lg text-[15px] text-[#ffffff]">
+            We empower governments, NGOs, and development partners with high-quality data, research, 
+            and capacity strengthening solutions that drive sustainable impact.
           </p>
         </div>
 
-        {/* Middle Column */}
-        <div className="bg-[#0B0B5C] p-5 text-center text-white rounded-[10px] max-w-sm w-full mx-auto lg:mx-[50px] shadow-[0_4px_8px_rgba(0,0,0,0.1)] animate-slide-up">
-          <img
-            src={Service2}
-            alt="Personalization"
-            className="mx-auto mb-4 h-40"
-          />
-          <h3 className="text-[20px] font-semibold mb-2">
-            Personalization Algorithms
-          </h3>
-          <p className="text-[15px]">
-            These tools adjust what users see based on their needs or actions,
-            helping make information more relevant and easy to use.
-          </p>
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <Link to={service.link} key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                className="group relative h-[380px] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              >
+                {/* Background Image */}
+                <img 
+                  src={service.bgImage} 
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/30 group-hover:via-black/50 transition-all" />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="text-white mb-5 transition-transform group-hover:scale-110 duration-300">
+                    {service.icon}
+                  </div>
+
+                  <h3 className="text-2xl font-semibold text-white mb-3 leading-tight">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-white/80 text-[15px] leading-relaxed mb-6 line-clamp-3">
+                    {service.desc}
+                  </p>
+
+                  <div className="flex items-center text-[#f47b20] font-medium text-sm group-hover:gap-2 transition-all">
+                    Learn More 
+                    <span className="ml-2 text-xl transition-transform group-hover:translate-x-2">→</span>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
         </div>
 
-        {/* Right Column */}
-        <div className="bg-[#0B0B5C] p-5 text-center text-white rounded-[10px] max-w-sm w-full mx-auto lg:mr-[100px] lg:ml-0 shadow-[0_4px_8px_rgba(0,0,0,0.1)] animate-slide-up">
-          <img
-            src={Service3}
-            alt="Autonomous Decision"
-            className="mx-auto mb-4 h-40"
-          />
-          <h3 className="text-[20px] font-semibold mb-2">
-            Autonomous Decision-Making
-          </h3>
-          <p className="text-[15px]">
-            We leverage autonomous decision-making systems to streamline
-            operations by enabling technology to make real-time, data-driven
-            choices without human intervention. This boosts efficiency, reduces
-            errors, accelerates response times, and enhances overall accuracy.
-          </p>
+        {/* CTA */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex flex-col items-center bg-white rounded-3xl px-10 py-8 shadow-xl">
+            <h3 className="md:text-2xl text-lg font-semibold text-[#0b0b5c] mb-3">Ready to Get Started?</h3>
+            <p className="text-[#f47b20] md:text-lg text-[15px] mb-6 max-w-md">
+              Let's discuss how our expertise can support your goals and create lasting impact.
+            </p>
+            <div className="flex gap-4 items-center">
+              <Link 
+                to="/contact"
+                className="md:text-[14px] text-[10px] px-3 py-2 bg-[#f47b20] hover:bg-orange-600 text-white font-semibold rounded-2xl transition-all"
+              >
+                Contact Our Team
+              </Link>
+              <Link 
+                to="/projects"
+                className="md:text-[14px] text-[10px] px-3 py-2 border border-[#0b0b5c] text-[#0b0b5c] hover:bg-[#0b0b5c] hover:text-white font-semibold rounded-2xl transition-all"
+              >
+                View Our Projects
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* Buttons */}
-      <div className="flex justify-center gap-6 mt-12">
-        <Link
-          to="/service" // Updated path to match the route in App.jsx
-          className="bg-[#F47B20] text-white px-6 py-3 rounded-md text-[13px] hover:bg-[#0B0B5C] transition"
-        >
-          Discover More
-        </Link>
-        <Link
-          to="/contact" // Path matches the route in App.jsx
-          className="bg-[#0B0B5C] text-[#FFF] px-6 py-3 rounded-md text-[13px] hover:bg-[#F47B20] transition"
-        >
-          Get Started
-        </Link>
       </div>
     </section>
   );
 };
 
-export default ServiceSection;
+export default Services;
