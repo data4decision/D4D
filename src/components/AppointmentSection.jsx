@@ -1,378 +1,244 @@
-// src/components/AppointmentSection.jsx
-import React, { useState, useEffect } from "react"; // Add useEffect
-import { FaCalendarAlt } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaCalendarAlt, FaCheckCircle } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import emailjs from "@emailjs/browser"; // Import EmailJS
 
 const AppointmentSection = () => {
-  // State for calendar visibility and selected dates
-  const [showConsultationCalendar, setShowConsultationCalendar] =
-    useState(false);
-  const [showPhoneCallCalendar, setShowPhoneCallCalendar] = useState(false);
-  const [consultationDate, setConsultationDate] = useState(null);
-  const [phoneCallDate, setPhoneCallDate] = useState(null);
+ const [showConsultationCalendar, setShowConsultationCalendar] = useState(false);
+ const [showPhoneCallCalendar, setShowPhoneCallCalendar] = useState(false);
+ const [consultationDate, setConsultationDate] = useState(null);
+ const [phoneCallDate, setPhoneCallDate] = useState(null);
 
-  // State for form visibility and data
-  const [showConsultationForm, setShowConsultationForm] = useState(false);
-  const [showPhoneCallForm, setShowPhoneCallForm] = useState(false);
-  const [consultationFormData, setConsultationFormData] = useState({
-    name: "",
-    email: "",
-    details: "",
-  });
-  const [phoneCallFormData, setPhoneCallFormData] = useState({
-    name: "",
-    email: "",
-    details: "",
-  });
+ const [showConsultationForm, setShowConsultationForm] = useState(false);
+ const [showPhoneCallForm, setShowPhoneCallForm] = useState(false);
 
-  // Initialize EmailJS with your Public Key
-  useEffect(() => {
-    emailjs.init("YdXH7zCJtfM6CuSxE"); // Replace with your EmailJS Public Key
-  }, []); // Empty dependency array ensures this runs once on component mount
+ const [isSubmitting, setIsSubmitting] = useState(false);
+ const [successMessage, setSuccessMessage] = useState("");
 
-  // Handlers for calendar visibility
-  const toggleConsultationCalendar = () => {
-    setShowConsultationCalendar(!showConsultationCalendar);
-    setShowPhoneCallCalendar(false);
-    setShowConsultationForm(false);
-    setShowPhoneCallForm(false);
-  };
+ const [consultationFormData, setConsultationFormData] = useState({
+ name: "", email: "", phone: "", details: ""
+ });
 
-  const togglePhoneCallCalendar = () => {
-    setShowPhoneCallCalendar(!showPhoneCallCalendar);
-    setShowConsultationCalendar(false);
-    setShowConsultationForm(false);
-    setShowPhoneCallForm(false);
-  };
+ const [phoneCallFormData, setPhoneCallFormData] = useState({
+ name: "", email: "", phone: "", details: ""
+ });
 
-  // Handlers for form visibility after date selection
-  const proceedToConsultationForm = () => {
-    if (consultationDate) {
-      setShowConsultationCalendar(false);
-      setShowConsultationForm(true);
-    } else {
-      alert("Please select a date and time for your consultation.");
-    }
-  };
+ // Auto-close success message
+ useEffect(() => {
+ if (successMessage) {
+ const timer = setTimeout(() => setSuccessMessage(""), 5000);
+ return () => clearTimeout(timer);
+ }
+ }, [successMessage]);
 
-  const proceedToPhoneCallForm = () => {
-    if (phoneCallDate) {
-      setShowPhoneCallCalendar(false);
-      setShowPhoneCallForm(true);
-    } else {
-      alert("Please select a date and time for your phone call.");
-    }
-  };
+ const toggleConsultation = () => {
+ setShowConsultationCalendar(!showConsultationCalendar);
+ setShowPhoneCallCalendar(false);
+ setShowConsultationForm(false);
+ setShowPhoneCallForm(false);
+ };
 
-  // Handlers for form input changes
-  const handleConsultationFormChange = (e) => {
-    const { name, value } = e.target;
-    setConsultationFormData((prev) => ({ ...prev, [name]: value }));
-  };
+ const togglePhoneCall = () => {
+ setShowPhoneCallCalendar(!showPhoneCallCalendar);
+ setShowConsultationCalendar(false);
+ setShowConsultationForm(false);
+ setShowPhoneCallForm(false);
+ };
 
-  const handlePhoneCallFormChange = (e) => {
-    const { name, value } = e.target;
-    setPhoneCallFormData((prev) => ({ ...prev, [name]: value }));
-  };
+ const proceedToConsultationForm = () => {
+ if (!consultationDate) return alert("Please select a date and time.");
+ setShowConsultationCalendar(false);
+ setShowConsultationForm(true);
+ };
 
-  // Handlers for form submission with EmailJS
-  const submitConsultation = async (e) => {
-    e.preventDefault();
-    if (
-      !consultationFormData.name ||
-      !consultationFormData.email ||
-      !consultationFormData.details
-    ) {
-      alert("Please fill out all fields.");
-      return;
-    }
+ const proceedToPhoneCallForm = () => {
+ if (!phoneCallDate) return alert("Please select a date and time.");
+ setShowPhoneCallCalendar(false);
+ setShowPhoneCallForm(true);
+ };
 
-    const appointmentDetails = {
-      type: "Consultation",
-      date: consultationDate.toLocaleString(),
-      name: consultationFormData.name,
-      email: consultationFormData.email,
-      details: consultationFormData.details,
-      bookedAt: new Date().toLocaleString(), // Current date and time: May 26, 2025, 11:59 AM WAT
-    };
+ const handleConsultationChange = (e) => {
+ setConsultationFormData({ ...consultationFormData, [e.target.name]: e.target.value });
+ };
 
-    try {
-      await emailjs.send(
-        "service_123abc",
-        "template_7eq51uh",
-        appointmentDetails
-      );
-      alert("Appointment booked successfully! Details sent to admin.");
-      setShowConsultationForm(false);
-      setConsultationDate(null);
-      setConsultationFormData({ name: "", email: "", details: "" });
-    } catch (error) {
-      console.error("Error sending email:", error);
-      alert("Failed to send appointment details.");
-    }
-  };
+ const handlePhoneCallChange = (e) => {
+ setPhoneCallFormData({ ...phoneCallFormData, [e.target.name]: e.target.value });
+ };
 
-  const submitPhoneCall = async (e) => {
-    e.preventDefault();
-    if (
-      !phoneCallFormData.name ||
-      !phoneCallFormData.email ||
-      !phoneCallFormData.details
-    ) {
-      alert("Please fill out all fields.");
-      return;
-    }
+ const handleSubmit = async (e, type) => {
+ e.preventDefault();
+ setIsSubmitting(true);
 
-    const appointmentDetails = {
-      type: "Phone Call",
-      date: phoneCallDate.toLocaleString(),
-      name: phoneCallFormData.name,
-      email: phoneCallFormData.email,
-      details: phoneCallFormData.details,
-      bookedAt: new Date().toLocaleString(), // Current date and time: May 26, 2025, 11:59 AM WAT
-    };
+ const formData = new FormData(e.target);
+ formData.append("appointment_type", type);
+ formData.append("preferred_date", type === "Consultation" ? consultationDate?.toLocaleString() : phoneCallDate?.toLocaleString());
 
-    try {
-      await emailjs.send(
-        "service_123abc",
-        "template_7eq51uh",
-        appointmentDetails
-      );
-      alert("Appointment booked successfully! Details sent to admin.");
-      setShowPhoneCallForm(false);
-      setPhoneCallDate(null);
-      setPhoneCallFormData({ name: "", email: "", details: "" });
-    } catch (error) {
-      console.error("Error sending email:", error);
-      alert("Failed to send appointment details.");
-    }
-  };
+ try {
+ const response = await fetch('https://formspree.io/f/mgojbjrn', {
+ method: 'POST',
+ body: formData,
+ headers: { 'Accept': 'application/json' }
+ });
 
-  return (
-    <>
-      {/* Section 1: Introduction */}
-      <section className="bg-[#0B0B5C] text-white py-16 pt-30">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Book Your Appointment
-          </h1>
-          <p className="text-base sm:text-lg  mx-auto">
-            Need support or have valuable information to share with D4D
-            International? Book your appointment today! Whether you're a
-            partner, client, or someone in need of our services, we’re here to
-            help. Schedule a session now and connect with our team for tailored
-            guidance and meaningful collaboration.
-          </p>
-        </div>
-      </section>
+ if (response.ok) {
+ setSuccessMessage(`🎉 ${type} appointment booked successfully!`);
 
-      {/* Section 2: Booking Options and Call-to-Action */}
-      <section className="bg-[#0B0B5C] text-[#FFF] py-16 pb-[150px] mb-[150px]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Column 1: Appointment Types */}
-            <div className="ml-0 md:ml-[100px] flex flex-col items-center md:items-start">
-              <p className="text-lg sm:text-xl font-semibold mb-6 text-center md:text-left">
-                What type of appointment are you booking?
-              </p>
-              <div className="space-y-6 w-full max-w-md">
-                {/* Consultation */}
-                <div>
-                  <button
-                    onClick={toggleConsultationCalendar}
-                    className="block w-full bg-white text-[#0B0B5C] text-base sm:text-lg font-medium py-3 px-6 rounded-lg border border-[#0B0B5C] hover:bg-[#f47b20] hover:text-white transition duration-300 text-center"
-                  >
-                    Consultation
-                  </button>
-                  {showConsultationCalendar && (
-                    <div className="mt-4 p-4 bg-gray-100 rounded-lg">
-                      <DatePicker
-                        selected={consultationDate}
-                        onChange={(date) => setConsultationDate(date)}
-                        showTimeSelect
-                        timeFormat="HH:mm"
-                        timeIntervals={15}
-                        dateFormat="MMMM d, yyyy h:mm aa"
-                        minDate={new Date()} // Prevent past dates
-                        inline
-                        className="w-full"
-                      />
-                      <button
-                        onClick={proceedToConsultationForm}
-                        className="mt-4 w-full bg-[#0B0B5C] text-white py-2 px-4 rounded-lg hover:bg-[#F47B20] transition duration-300"
-                      >
-                        Proceed to Details
-                      </button>
-                    </div>
-                  )}
-                  {showConsultationForm && (
-                    <form
-                      onSubmit={submitConsultation}
-                      className="mt-4 p-4 bg-gray-100 text-[#0b0b5c] rounded-lg space-y-4"
-                    >
-                      <div>
-                        <label className="block text-sm font-medium mb-1">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={consultationFormData.name}
-                          onChange={handleConsultationFormChange}
-                          className="w-full p-2 border border-gray-300 rounded-lg"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-1">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={consultationFormData.email}
-                          onChange={handleConsultationFormChange}
-                          className="w-full p-2 border border-gray-300 rounded-lg"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-1">
-                          Brief Details of Consultation
-                        </label>
-                        <textarea
-                          name="details"
-                          value={consultationFormData.details}
-                          onChange={handleConsultationFormChange}
-                          className="w-full p-2 border border-gray-300 rounded-lg"
-                          rows="4"
-                          required
-                        ></textarea>
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full bg-[#0B0B5C] text-white py-2 px-4 rounded-lg hover:bg-[#F47B20] transition duration-300"
-                      >
-                        Book Appointment
-                      </button>
-                    </form>
-                  )}
-                </div>
+ // Auto close everything after success
+ setTimeout(() => {
+ if (type === "Consultation") {
+ setShowConsultationForm(false);
+ setConsultationDate(null);
+ setConsultationFormData({ name: "", email: "", phone: "", details: "" });
+ } else {
+ setShowPhoneCallForm(false);
+ setPhoneCallDate(null);
+ setPhoneCallFormData({ name: "", email: "", phone: "", details: "" });
+ }
+ }, 1500);
+ } else {
+ alert("Failed to submit. Please try again.");
+ }
+ } catch (error) {
+ alert("Network error. Please check your connection.");
+ } finally {
+ setIsSubmitting(false);
+ }
+ };
 
-                {/* Phone Call */}
-                <div>
-                  <button
-                    onClick={togglePhoneCallCalendar}
-                    className="block w-full bg-white text-[#0B0B5C] text-base sm:text-lg font-medium py-3 px-6 rounded-lg border border-[#0B0B5C] hover:bg-[#f47b20] hover:text-white transition duration-300 text-center"
-                  >
-                    Phone Call
-                  </button>
-                  {showPhoneCallCalendar && (
-                    <div className="mt-4 p-4 bg-gray-100 rounded-lg">
-                      <DatePicker
-                        selected={phoneCallDate}
-                        onChange={(date) => setPhoneCallDate(date)}
-                        showTimeSelect
-                        timeFormat="HH:mm"
-                        timeIntervals={15}
-                        dateFormat="MMMM d, yyyy h:mm aa"
-                        minDate={new Date()} // Prevent past dates
-                        inline
-                        className="w-full"
-                      />
-                      <button
-                        onClick={proceedToPhoneCallForm}
-                        className="mt-4 w-full bg-[#0B0B5C] text-white py-2 px-4 rounded-lg hover:bg-[#F47B20] transition duration-300"
-                      >
-                        Proceed to Details
-                      </button>
-                    </div>
-                  )}
-                  {showPhoneCallForm && (
-                    <form
-                      onSubmit={submitPhoneCall}
-                      className="mt-4 p-4 bg-gray-100 text-[#0b0b5c] rounded-lg space-y-4"
-                    >
-                      <div>
-                        <label className="block text-sm font-medium mb-1">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={phoneCallFormData.name}
-                          onChange={handlePhoneCallFormChange}
-                          className="w-full p-2 border border-gray-300 rounded-lg"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-1">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={phoneCallFormData.email}
-                          onChange={handlePhoneCallFormChange}
-                          className="w-full p-2 border border-gray-300 rounded-lg"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-1">
-                          Brief Details of Phone Call
-                        </label>
-                        <textarea
-                          name="details"
-                          value={phoneCallFormData.details}
-                          onChange={handlePhoneCallFormChange}
-                          className="w-full p-2 border border-gray-300 rounded-lg"
-                          rows="4"
-                          required
-                        ></textarea>
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full bg-[#0B0B5C] text-white py-2 px-4 rounded-lg hover:bg-[#F47B20] transition duration-300"
-                      >
-                        Book Appointment
-                      </button>
-                    </form>
-                  )}
-                </div>
-              </div>
-            </div>
+ return (
+ <>
+ {/* Hero Header */}
+ <section className="bg-[#0B0B5C] text-white py-20">
+ <div className="max-w-7xl mx-auto px-6 text-center">
+ <h1 className="text-4xl md:text-5xl font-bold mb-6">Book Your Appointment</h1>
+ <p className="text-lg max-w-2xl mx-auto text-white/80">
+ Schedule a consultation or phone call with the D4D International team.
+ </p>
+ </div>
+ </section>
 
-            {/* Column 2: Call-to-Action */}
-            <div className="flex flex-col items-center md:items-start">
-              <div className="flex items-center mb-6">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mr-3">
-                  Book Appointment Today
-                </h1>
-                <FaCalendarAlt className="text-3xl sm:text-4xl" />
-              </div>
-              <p className="text-base sm:text-lg text-center md:text-left">
-                Take the first step toward creating real impact with D4D
-                International.
-                <br />
-                <br />
-                Whether you need support with data systems, digital solutions,
-                content development, project management, or tailored training,
-                our expert team is ready to help you grow, improve, and lead
-                with confidence.
-                <br />
-                <br />
-                👉 Book your consultation now — your journey starts here.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+ <section className="py-20 bg-white">
+ <div className="max-w-7xl mx-auto px-6">
+ <div className="grid md:grid-cols-2 gap-12">
+ {/* Left: Booking Options */}
+ <div className="space-y-10">
+ {/* Consultation */}
+ <div className="space-y-4">
+ <button
+ onClick={toggleConsultation}
+ className="w-full bg-[#0B0B5C] hover:bg-[#f47b20] text-white py-5 px-8 rounded-3xl text-left font-medium text-lg transition-all duration-300 flex items-center justify-between group"
+ >
+ <span>📅 Book Consultation (Virtual / In-person)</span>
+ <span className="group-hover:rotate-45 transition">→</span>
+ </button>
+
+ {showConsultationCalendar && (
+ <div className="bg-gray-50 rounded-3xl p-8">
+ <DatePicker
+ selected={consultationDate}
+ onChange={setConsultationDate}
+ showTimeSelect
+ timeIntervals={30}
+ dateFormat="MMMM d, yyyy h:mm aa"
+ minDate={new Date()}
+ inline
+ className="w-full"
+ />
+ <button 
+ onClick={proceedToConsultationForm}
+ className="mt-6 w-full bg-[#f47b20] hover:bg-orange-600 text-white py-4 rounded-2xl font-medium transition"
+ >
+ Continue to Details
+ </button>
+ </div>
+ )}
+
+ {showConsultationForm && (
+ <form onSubmit={(e) => handleSubmit(e, "Consultation")} className="bg-gray-50 rounded-3xl p-8 space-y-5">
+ <input type="text" name="name" placeholder="Full Name" value={consultationFormData.name} onChange={handleConsultationChange} required className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <input type="email" name="email" placeholder="Email Address" value={consultationFormData.email} onChange={handleConsultationChange} required className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <input type="tel" name="phone" placeholder="Phone Number" value={consultationFormData.phone} onChange={handleConsultationChange} className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <textarea name="details" placeholder="Tell us more about your request..." value={consultationFormData.details} onChange={handleConsultationChange} required rows={4} className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <button type="submit" disabled={isSubmitting} className="w-full bg-[#0B0B5C] hover:bg-black text-white py-4 rounded-2xl font-medium transition disabled:opacity-70">
+ {isSubmitting ? "Booking Appointment..." : "Confirm & Book Consultation"}
+ </button>
+ </form>
+ )}
+ </div>
+
+ {/* Phone Call */}
+ <div className="space-y-4">
+ <button
+ onClick={togglePhoneCall}
+ className="w-full bg-[#0B0B5C] hover:bg-[#f47b20] text-white py-5 px-8 rounded-3xl text-left font-medium text-lg transition-all duration-300 flex items-center justify-between group"
+ >
+ <span>📞 Book Phone Call Appointment</span>
+ <span className="group-hover:rotate-45 transition">→</span>
+ </button>
+
+ {showPhoneCallCalendar && (
+ <div className="bg-gray-50 rounded-3xl p-8">
+ <DatePicker
+ selected={phoneCallDate}
+ onChange={setPhoneCallDate}
+ showTimeSelect
+ timeIntervals={30}
+ dateFormat="MMMM d, yyyy h:mm aa"
+ minDate={new Date()}
+ inline
+ />
+ <button 
+ onClick={proceedToPhoneCallForm}
+ className="mt-6 w-full bg-[#f47b20] hover:bg-orange-600 text-white py-4 rounded-2xl font-medium transition"
+ >
+ Continue to Details
+ </button>
+ </div>
+ )}
+
+ {showPhoneCallForm && (
+ <form onSubmit={(e) => handleSubmit(e, "Phone Call")} className="bg-gray-50 rounded-3xl p-8 space-y-5">
+ <input type="text" name="name" placeholder="Full Name" value={phoneCallFormData.name} onChange={handlePhoneCallChange} required className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <input type="email" name="email" placeholder="Email Address" value={phoneCallFormData.email} onChange={handlePhoneCallChange} required className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <input type="tel" name="phone" placeholder="Phone Number" value={phoneCallFormData.phone} onChange={handlePhoneCallChange} className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <textarea name="details" placeholder="Purpose of the call..." value={phoneCallFormData.details} onChange={handlePhoneCallChange} required rows={4} className="w-full p-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#f47b20]" />
+ <button type="submit" disabled={isSubmitting} className="w-full bg-[#0B0B5C] text-white py-4 rounded-2xl font-medium transition disabled:opacity-70">
+ {isSubmitting ? "Booking Appointment..." : "Confirm & Book Phone Call"}
+ </button>
+ </form>
+ )}
+ </div>
+ </div>
+
+ {/* Right Side */}
+ <div className="flex items-center">
+ <div className="bg-gradient-to-br from-[#0B0B5C] to-[#1e2a5c] text-white p-12 rounded-3xl">
+ <FaCalendarAlt className="text-6xl mb-8" />
+ <h3 className="text-4xl font-bold mb-6">Ready to Make an Impact?</h3>
+ <p className="text-white/80 text-lg leading-relaxed">
+ Whether you need expert consultation, partnership discussion, or technical support — 
+ our dedicated team is ready to assist you every step of the way.
+ </p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ {/* Success Toast with Animation */}
+ {successMessage && (
+ <motion.div 
+ initial={{ opacity: 0, y: 50 }}
+ animate={{ opacity: 1, y: 0 }}
+ exit={{ opacity: 0, y: 50 }}
+ className="fixed bottom-8 right-8 bg-green-600 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 z-50"
+ >
+ <FaCheckCircle className="text-2xl" />
+ <span className="font-medium">{successMessage}</span>
+ </motion.div>
+ )}
+ </>
+ );
 };
 
 export default AppointmentSection;

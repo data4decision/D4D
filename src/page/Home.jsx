@@ -10,6 +10,8 @@ import ContactSection from "../components/ContactSection.jsx";
 
 import HeroSection from "../components/HeroSection.jsx";
 import WhyChooseUs from "../components/WhyChooseUs.jsx";
+import ImpactAchievement from "../components/ImpactAchievement.jsx";
+import PartnersCollaborators from "../components/PartnersCollaborators.jsx";
 
 // import OurTeam from "../components/OurTeam.jsx";
 
@@ -74,6 +76,8 @@ const Home = () => {
       <ServiceSection />
       <WhyChooseUs/>
       <OurApproach />
+      <ImpactAchievement/>
+      <PartnersCollaborators/>
       <AppointmentSection />
 
       <div className="mb-50">
