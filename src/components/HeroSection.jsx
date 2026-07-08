@@ -23,7 +23,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0b0b5c] via-[#102a8a] to-[#1e40af] pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0b0b5c] via-[#102a8a] to-[#1e40af] md:pt-20 pt-25">
       
       <div className="max-w-7xl mx-auto px-6 pb-16 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         
@@ -34,12 +34,12 @@ const Hero = () => {
             <span className="text-white text-sm font-medium tracking-widest">DATA FOR DECISION</span>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tighter">
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-white tracking-tighter">
             Transforming Data into<br />
             <span className="text-[#f47b20]">Actionable Intelligence</span>
           </h1>
 
-          <p className="text-xl text-white/80 max-w-lg">
+          <p className="text-base text-white/80 max-w-lg">
             Empowering governments, NGOs, businesses, and communities across Africa through 
             world-class research, monitoring, evaluation, and digital solutions.
           </p>

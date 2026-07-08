@@ -12,6 +12,7 @@ import HeroSection from "../components/HeroSection.jsx";
 import WhyChooseUs from "../components/WhyChooseUs.jsx";
 import ImpactAchievement from "../components/ImpactAchievement.jsx";
 import PartnersCollaborators from "../components/PartnersCollaborators.jsx";
+import FAQ from "../components/FAQ.jsx";
 
 // import OurTeam from "../components/OurTeam.jsx";
 
@@ -79,11 +80,11 @@ const Home = () => {
       <ImpactAchievement/>
       <PartnersCollaborators/>
       <AppointmentSection />
+      <FAQ/>
 
-      <div className="mb-50">
-        <ContactSection />
-        {/* <OurTeam /> */}
-      </div>
+     
+        {/* <ContactSection /> */}
+       
     </>
   );
 };

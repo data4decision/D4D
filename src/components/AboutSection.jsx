@@ -103,7 +103,7 @@ const AboutSection = () => {
             </h2>
 
             {/* Description */}
-            <p className="md:text-[15px] text-[12px] text-[#0b0b5c]/90 leading-relaxed">
+            <p className="md:text-[18px] text-[15px] text-[#0b0b5c]/90 leading-relaxed">
               We are a data-driven organization committed to helping governments, 
               non-governmental organizations (NGOs), and businesses harness the 
               power of data to make informed decisions. By transforming complex 
@@ -124,8 +124,8 @@ const AboutSection = () => {
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   <div className="text-4xl mb-3">{card.icon}</div>
-                  <h3 className="font-semibold md:text-[14px] text-[12px] text-xl mb-2">{card.title}</h3>
-                  <p className="md:text-[12px] text-[10px] text-[#ffffff] leading-relaxed">{card.desc}</p>
+                  <h3 className="font-semibold md:text-base text-[15px] text-[#ffffff] mb-2">{card.title}</h3>
+                  <p className="md:text-[18px] text-[15px] text-[#ffffff] leading-relaxed">{card.desc}</p>
                 </div>
               ))}
             </div>
