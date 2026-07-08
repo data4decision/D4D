@@ -75,7 +75,7 @@ const AboutSection = () => {
           <div className={`transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}`}>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] lg:aspect-square">
               <img
-                src="/about.jpg" // Update with your image path
+                src="/about.png" // Update with your image path
                 alt="Team working on data-driven solutions"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
