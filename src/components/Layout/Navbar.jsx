@@ -98,7 +98,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-9 text-[15px] font-medium">
-            <a href="/home" className="nav-link text-[#0b0b5c] hover:text-[#f47b20] transition-colors duration-200">Home</a>
+            <a href="/" className="nav-link text-[#0b0b5c] hover:text-[#f47b20] transition-colors duration-200">Home</a>
             <a href="/about" className="nav-link text-[#0b0b5c] hover:text-[#f47b20] transition-colors duration-200">About Us</a>
             
             {/* Services Dropdown - Improved */}
