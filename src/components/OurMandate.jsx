@@ -32,7 +32,7 @@ const OurMandate = () => {
         whileInView={{opacity: 1, x: 0}}
         viewport={{once: true}}
         className='lg:col-span-5'>
-          <p className="text-lg text-[#0b0b5c] text-center px-20">
+          <p className="text-lg text-[#0b0b5c] text-center sm:px-20">
                 Our mandate is to strengthen the systems, skills, and standards that enable 
                 organisations to collect, manage, understand, and use data effectively for 
                 better decision-making and sustainable development.
@@ -90,17 +90,18 @@ const OurMandate = () => {
                 className="group bg-white rounded-3xl px-8 py-6 border border-transparent hover:border-[#f47b20]/20 transition-all hover:shadow-xl"
               >
                 <div className="flex gap-4">
-                  <div className="shrink-0">
+                  {/* <div className="shrink-0">
                     <div className="w-12 h-12 rounded-2xl bg-[#0b0b5c] text-white flex items-center justify-center text-xl font-bold">01</div>
-                  </div>
+                  </div> */}
                   <div className="flex-1">
-                    <div className="flex items-start justify-between mb-4">
-                      <h3 className="text-xl font-semibold text-[#0b0b5c] pr-8">
+                    <div className="flex gap-2 justify-between mb-4">
+                      <div className="w-10 h-10 p-2 rounded-2xl bg-[#0b0b5c] text-white flex items-center justify-center text-xl font-bold">01</div>                     
+                      <h3 className="sm:text-xl text-lg font-semibold text-[#0b0b5c] pr-8">
                         Strengthening Information Systems through Tailored Technical Support
                       </h3>
-                      <div className="text-[#f47b20] opacity-40 group-hover:opacity-100 transition">
+                      <p className="text-[#f47b20] opacity-40 group-hover:opacity-100 transition">
                         <FaDatabase className="w-7 h-7" />
-                      </div>
+                      </p>
                     </div>
                     <p className="text-[#0b0b5c]/90 leading-relaxed">
                       We provide customised technical support that helps organisations improve their information systems, 
@@ -118,11 +119,12 @@ const OurMandate = () => {
                 className="group bg-white rounded-3xl p-8 border border-transparent hover:border-[#f47b20]/20 transition-all hover:shadow-xl"
               >
                 <div className="flex gap-6">
-                  <div className="shrink-0">
+                  {/* <div className="shrink-0">
                     <div className="w-12 h-12 rounded-2xl bg-[#0b0b5c] text-white flex items-center justify-center text-xl font-bold">02</div>
-                  </div>
+                  </div> */}
                   <div className="flex-1">
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex gap-2 justify-between mb-4">
+                      <div className="w-10 h-10 rounded-2xl p-2 bg-[#0b0b5c] text-white flex items-center justify-center text-xl font-bold">02</div>
                       <h3 className="text-xl font-semibold text-[#0b0b5c] pr-8">
                         Building Sustainable Local Capacity in Data Management and Use
                       </h3>
@@ -146,11 +148,12 @@ const OurMandate = () => {
                 className="group bg-white rounded-3xl p-8 border border-transparent hover:border-[#f47b20]/20 transition-all hover:shadow-xl"
               >
                 <div className="flex gap-6">
-                  <div className="shrink-0">
+                  {/* <div className="shrink-0">
                     <div className="w-12 h-12 rounded-2xl bg-[#0b0b5c] text-white flex items-center justify-center text-xl font-bold">03</div>
-                  </div>
+                  </div> */}
                   <div className="flex-1">
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex gap-2 justify-between mb-4">
+                      <div className="w-10 h-10 rounded-2xl p-2 bg-[#0b0b5c] text-white flex items-center justify-center text-xl font-bold">03</div>
                       <h3 className="text-xl font-semibold text-[#0b0b5c] pr-8">
                         Promoting Data Governance and Quality Assurance Standards
                       </h3>

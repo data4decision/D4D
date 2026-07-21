@@ -98,7 +98,7 @@ const OurExpertise = () => {
                 <h2 className='text-4xl font-bold text-[#0b0b5c] leading-tight mb-6'>
                     Our Expertise Is Built Around Evidence and Innovation
                 </h2>
-                <p className='text-xl text-[#0b0b5c]/70'>
+                <p className='sm:text-xl text-lg text-[#0b0b5c]/70'>
                      We combine research, data, technology, monitoring, evaluation, and sector-specific expertise to provide practical solutions that help organisations make better decisions and achieve sustainable results.
                 </p>
             </div>
