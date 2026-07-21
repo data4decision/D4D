@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 import AboutIntroduction from '../components/AboutIntroduction';
 import OurMandate from '../components/OurMandate';
+import OurExpertise from '../components/OurExpertise';
+
 
 const AboutHero = () => {
   return (
@@ -112,6 +114,7 @@ const AboutHero = () => {
     </section>
     <AboutIntroduction/>
     <OurMandate/>
+   <OurExpertise/>
     </div>
   );
 };
