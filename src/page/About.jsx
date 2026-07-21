@@ -111,7 +111,7 @@ const AboutHero = () => {
       </motion.div> */}
     </section>
     <AboutIntroduction/>
-    {/* <OurMandate/> */}
+    <OurMandate/>
     </div>
   );
 };

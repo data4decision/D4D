@@ -15,7 +15,7 @@ const AboutIntroduction = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl lg:text-4xl font-bold tracking-tighter leading-[1.1] text-[#0b0b5c] mb-10">
+            <h2 className="text-4xl lg:text-4xl font-bold tracking-tighter leading-[1.1] text-[#0b0b5c] mb-10">
               Turning <span className="text-[#f47b20]">Data</span> into Decisions.<br />
               Driving <span className="text-[#f47b20]">Sustainable Development.</span>
             </h2>

@@ -9,9 +9,36 @@ import {
 
 const OurMandate = () => {
   return (
-    <section className="py-24 bg-zinc-50">
+    <section className="py-18 bg-[#0b0b5c]/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+        <div className="flex items-center gap-3 mb-10 m-auto bg-[#0b0b5c]/20 px-3 py-2 rounded-3xl inline-flex ">
+          <div className="w-2 h-2 bg-[#0b0b5c] rounded-full animate-pulse"/>
+          <span className='font-bold text-sm font-medium tracking-widest text-[#0b0b5c]'>Our Mandate</span>
+        </div>
+        <motion.h2
+        initial={{ opacity: 0, x: -40}}
+        whileInView={{opacity: 1, x: 0}}
+        viewport={{once: true}}
+        className='lg:col-span-5'>
+          <h2 className="text-4xl lg:text-4xl font-bold tracking-tighter text-center text-[#0b0b5c] leading-tight mb-6">
+                Strengthening Systems.
+                Building Capacity.
+                Improving Decisions.
+              </h2>
+        </motion.h2>
+
+        <motion.p
+        initial={{ opacity: 0, x: -40}}
+        whileInView={{opacity: 1, x: 0}}
+        viewport={{once: true}}
+        className='lg:col-span-5'>
+          <p className="text-lg text-[#0b0b5c] text-center px-20">
+                Our mandate is to strengthen the systems, skills, and standards that enable 
+                organisations to collect, manage, understand, and use data effectively for 
+                better decision-making and sustainable development.
+              </p>
+        </motion.p>
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center  mt-15">
           
           {/* Left Side - Visual */}
           <motion.div 
@@ -21,9 +48,9 @@ const OurMandate = () => {
             className="lg:col-span-5"
           >
             <div className="relative">
-              <div className="aspect-[4/3.1] rounded-3xl overflow-hidden shadow-2xl border border-zinc-100">
+              <div className="aspect-[4/4.1] rounded-3xl overflow-hidden shadow-2xl border border-zinc-100">
                 <img 
-                  src="https://images.unsplash.com/photo-1518186285589-2f7649a2e6c8?q=80&w=2070" 
+                  src="/mandate.png" 
                   alt="Digital systems and capacity building"
                   className="w-full h-full object-cover"
                 />
@@ -38,7 +65,7 @@ const OurMandate = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-[#0b0b5c]">Integrated Systems</div>
-                    <div className="text-sm text-zinc-500">for lasting impact</div>
+                    <div className="text-sm text-[#0b0b5c]/70">for lasting impact</div>
                   </div>
                 </div>
               </div>
@@ -52,19 +79,7 @@ const OurMandate = () => {
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tighter text-[#0b0b5c] leading-tight mb-6">
-                Strengthening Systems.<br />
-                Building Capacity.<br />
-                Improving Decisions.
-              </h2>
-              <p className="text-lg text-zinc-600 max-w-xl">
-                Our mandate is to strengthen the systems, skills, and standards that enable 
-                organisations to collect, manage, understand, and use data effectively for 
-                better decision-making and sustainable development.
-              </p>
-            </div>
-
+            
             {/* Mandate Cards */}
             <div className="space-y-6">
               {/* Mandate 01 */}
@@ -72,9 +87,9 @@ const OurMandate = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="group bg-white rounded-3xl p-8 border border-transparent hover:border-[#f47b20]/20 transition-all hover:shadow-xl"
+                className="group bg-white rounded-3xl px-8 py-6 border border-transparent hover:border-[#f47b20]/20 transition-all hover:shadow-xl"
               >
-                <div className="flex gap-6">
+                <div className="flex gap-4">
                   <div className="shrink-0">
                     <div className="w-12 h-12 rounded-2xl bg-[#0b0b5c] text-white flex items-center justify-center text-xl font-bold">01</div>
                   </div>
@@ -87,7 +102,7 @@ const OurMandate = () => {
                         <FaDatabase className="w-7 h-7" />
                       </div>
                     </div>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-[#0b0b5c]/90 leading-relaxed">
                       We provide customised technical support that helps organisations improve their information systems, 
                       data processes, digital tools, and decision-making infrastructure.
                     </p>
@@ -115,7 +130,7 @@ const OurMandate = () => {
                         <FaUsers className="w-7 h-7" />
                       </div>
                     </div>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-[#0b0b5c]/90 leading-relaxed">
                       We strengthen the skills and capabilities of individuals and institutions to collect, manage, 
                       analyse, interpret, and effectively use data for planning and decision-making.
                     </p>
@@ -143,7 +158,7 @@ const OurMandate = () => {
                         <FaShieldAlt className="w-7 h-7" />
                       </div>
                     </div>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-[#0b0b5c]/90 leading-relaxed">
                       We support the adoption of strong data governance principles, quality assurance systems, 
                       accountability mechanisms, and standards that promote reliable, secure, and usable data.
                     </p>
