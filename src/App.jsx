@@ -8,6 +8,9 @@ import Service from "./page/Service.jsx";
 import Contact from "./page/Contact.jsx";
 import Conference from "./page/Conference.jsx";
 import VideoCall from "./page/VideoCall.jsx";
+import Meal from './page/Meal.jsx'
+import Research from './page/Research.jsx'
+import DataCollection from './page/DataCollection.jsx'
 
 // ✅ Define ErrorBoundary
 class ErrorBoundary extends React.Component {
@@ -49,6 +52,9 @@ const App = () => {
             <Route path="contact" element={<Contact />} />
             <Route path="video" element={<VideoCall />} />
             <Route path="room/:roomID" element={<Conference />} />
+            <Route path="meal" element={<Meal />} />
+             <Route path="research" element={<Research />} />
+             <Route path="data-collection" element={<DataCollection/>}/>
           </Route>
         </Routes>
       </Router>

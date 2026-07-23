@@ -6,6 +6,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import AboutIntroduction from '../components/AboutIntroduction';
 import OurMandate from '../components/OurMandate';
 import OurExpertise from '../components/OurExpertise';
+import OurCoreValues from '../components/OurCoreValues';
 
 
 const AboutHero = () => {
@@ -115,6 +116,7 @@ const AboutHero = () => {
     <AboutIntroduction/>
     <OurMandate/>
    <OurExpertise/>
+   <OurCoreValues/>
     </div>
   );
 };

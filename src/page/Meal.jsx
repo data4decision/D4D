@@ -1,0 +1,116 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaArrowRight, FaCheck } from 'react-icons/fa';
+
+const MEALSection = () => {
+  const coreServices = [
+    "MEL Framework Development",
+    "Theory of Change Development",
+    "Indicator Design and Tracking",
+    "Baseline Studies",
+    "Midline Assessments",
+    "Endline Evaluations",
+    "Impact Assessments",
+    "Third-Party Monitoring",
+    "Data Quality Assessments (DQA)",
+    "Learning and Knowledge Management",
+    "Donor Reporting Support"
+  ];
+
+  return (
+    <section id="meal" className="py-24 bg-white border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          
+          {/* Left: Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3.1] group"
+          >
+            <img 
+              src="/monitor.jpg" 
+              alt="Monitoring, Evaluation and Learning in development projects"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0b0b5c]/50 via-[#0b0b5c]/20 to-transparent" />
+            
+            {/* Number Overlay */}
+            <div className="absolute top-8 left-8">
+              <div className="text-[140px] font-bold leading-none text-white/10 tracking-[-0.04em]">
+                01
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-3 mb-6 bg-[#F47B20]/20 px-3 py-1 rounded-2xl animate-pulse">
+              <div className="w-2 h-2 bg-[#F47B20] rounded-full" />
+              <span className="uppercase tracking-[3px] text-sm font-semibold text-[#F47B20] ">
+                SERVICE AREA 01
+              </span>
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B0B5C] leading-tight tracking-tight mb-4">
+              MONITORING, EVALUATION,<br />
+              ACCOUNTABILITY &amp; LEARNING
+            </h2>
+
+            <p className="md:text-2xl text-xl text-[#F47B20] font-medium leading-tight mb-8">
+              Measure results. Improve performance. Demonstrate impact.
+            </p>
+
+            <p className="md:text-lg text-sm text-[#0b0b5c] leading-relaxed mb-8">
+              We support organisations in measuring results, improving programme performance, 
+              strengthening accountability, and generating learning for continuous improvement.
+            </p>
+
+            {/* Core Services */}
+            <div className="mb-12">
+              <h4 className="font-semibold text-[#0B0B5C] text-xl mb-6">Core Services</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                {coreServices.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="flex items-start gap-3 group/item"
+                  >
+                    <div className="mt-1.5 text-[#F47B20]">
+                      <FaCheck className="w-4 h-4" />
+                    </div>
+                    <span className="text-[#0b0b5c] text-sm leading-snug group-hover/item:text-[#0B0B5C] transition-colors">
+                      {service}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group inline-flex items-center gap-3 bg-[#0B0B5C] hover:bg-[#F47B20] text-white px-5 py-3 rounded-2xl font-medium text-lg transition-all duration-300"
+            >
+              Discuss This Service
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </motion.a>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MEALSection;

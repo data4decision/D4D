@@ -44,17 +44,17 @@ const Navbar = () => {
     { 
       name: "Monitoring, Evaluation, Accountability & Learning (MEAL)", 
       icon: <FaChartBar />,
-      link: "#meal"
+      link: "/meal"
     },
     { 
       name: "Research & Evidence Generation", 
       icon: <FaSearch />,
-      link: "#research"
+      link: "/research"
     },
     { 
       name: "Data Collection & Management", 
       icon: <FaDatabase />,
-      link: "#data-collection"
+      link: "/data-collection"
     },
     { 
       name: "Data Analytics & Business Intelligence", 
@@ -103,14 +103,14 @@ const Navbar = () => {
             
             {/* Services Dropdown - Improved */}
             <div className="relative" ref={dropdownRef}>
-              <button 
+              <a href='/service' 
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className="flex items-center gap-1.5 text-[#0b0b5c] hover:text-[#f47b20] transition-colors duration-200 py-2"
               >
                 Services
                 <FaChevronDown className={`text-xs transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
+              </a>
 
               {/* Mega Menu - Enhanced Styling */}
               {isServicesOpen && (
@@ -161,27 +161,27 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-white border-t shadow-2xl">
-          <div className="px-6 py-10 flex flex-col gap-6 text-[17px] font-medium">
+          <div className="px-6 py-4 flex flex-col gap-6 text-[17px] font-medium">
             <a href="/" className="py-3 text-[#0b0b5c]" onClick={() => setIsOpen(false)}>Home</a>
             <a href="/about" className="py-3 text-[#0b0b5c]" onClick={() => setIsOpen(false)}>About Us</a>
             
             {/* Mobile Services */}
             <div className="py-3">
-              <button 
+              <a href='/service' 
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className="w-full flex justify-between items-center text-left text-[#0b0b5c]"
               >
                 Services
                 <FaChevronDown className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
+              </a>
               
               {isServicesOpen && (
-                <div className="mt-6 pl-4 space-y-3 text-base">
+                <div className="mt-2 pl-4 space-y-1 text-base">
                   {services.map((service, i) => (
                     <a 
                       key={i} 
                       href={service.link}
-                      className="flex items-center gap-2 text-zinc-700 hover:text-[#f47b20] transition-colors"
+                      className="flex items-center gap-1 text-zinc-700 hover:text-[#f47b20] transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       <span className="text-[#f47b20] text-xl">{service.icon}</span>
